@@ -31,9 +31,30 @@ var templateOne = React.createElement(
     )
 );
 
-// const userName = 'Yousef Ali';
-// const userAge = 27;
-// const userLocation = 'IOWA';
+var userName = 'Yousef Ali';
+var userAge = 27;
+var userLocation = 'IOWA';
+
+var app = {
+    title: 'Indicision App',
+    subtitle: 'Put your life in the hands of technology',
+    options: ['One', 'Two']
+};
+var template = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        app.title
+    ),
+    app.title && React.createElement(
+        'h3',
+        null,
+        app.subtitle
+    ),
+    app.options.length > 0 ? "my options" : "No options"
+);
 
 var user = {
     name: 'Yousef Ali',
@@ -47,40 +68,25 @@ var templateTwo = React.createElement(
         'h1',
         null,
         'Name : ',
-        user.name
+        user.name ? user.name : 'idk'
     ),
-    React.createElement(
+    user.age && user.age > 20 && React.createElement(
         'p',
         null,
         ' Age : ',
         user.age
     ),
-    React.createElement(
+    getLocation(user.location)
+);
+
+function getLocation(location) {
+    if (location) return React.createElement(
         'p',
         null,
         'Location : ',
-        user.location
-    )
-);
-
-var app = {
-    title: 'Indicision App',
-    subtitle: 'app for decisions'
-};
-var template = React.createElement(
-    'div',
-    null,
-    React.createElement(
-        'h1',
-        null,
-        app.title
-    ),
-    React.createElement(
-        'h3',
-        null,
-        app.subtitle
-    )
-);
+        location
+    );
+}
 
 //var template = /*#__PURE__*/React.createElement("p", null, "this is JSX");
 var appRoot = document.getElementById('app');
