@@ -1,5 +1,8 @@
 // JSX - JavaScript XML
 
+//var template = /*#__PURE__*/React.createElement("p", null, "this is JSX");
+const appRoot = document.getElementById('app');
+
 const templateOne = (
     <div>
         <p>This is JSX </p>
@@ -45,7 +48,30 @@ function getLocation(location) {
         return <p>Location : {location}</p>;
 }
 
-//var template = /*#__PURE__*/React.createElement("p", null, "this is JSX");
-const appRoot = document.getElementById('app');
-ReactDOM.render(template, appRoot);
+let count =0;
+const addOne = ()=>{
+    count++;
+    renderCounterApp();
+}
+const minusOne = ()=>{
+    count--;
+    renderCounterApp();
+}
+const reset = ()=>{
+    count=0;
+    renderCounterApp();
+}
+
+const renderCounterApp = ()=>{
+    const templateThree = (
+        <div>
+            <h1>Count : {count}</h1>
+            <button onClick={addOne} >+1</button>
+            <button onClick={minusOne} >-1</button>
+            <button onClick={reset} >Reset</button>
+        </div>
+    );
+    ReactDOM.render(templateThree, appRoot);
+}
+renderCounterApp();
 
