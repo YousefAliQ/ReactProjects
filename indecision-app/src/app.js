@@ -40,6 +40,14 @@ class Action extends React.Component {
 }
 
 class Options extends React.Component {
+
+    constructor(props){
+        super(props);
+
+        // binding 'this' object to allow handleRemoveAll method to access props.
+        this.handleRemoveAll = this.handleRemoveAll.bind(this);
+    }
+
     handleRemoveAll() {
         alert('sdf');
     }
