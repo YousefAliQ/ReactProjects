@@ -33,12 +33,24 @@ class Counter extends React.Component {
 
     handleReset(){
         this.setState(
-            (prevState)=>{
+            ()=>{
                 return{
                     count:0
                 }
             }
-        )
+        );
+
+        // New style & sync --recommended
+        // this.setState(
+        //     (prevState)=>{
+        //         return{
+        //             count: prevState.count+1
+        //         }
+        //     }
+        // );
+
+        // Old style & async because of the virtual DOM --not recommended
+        //this.setState({count:0});
     }
 
     render() {

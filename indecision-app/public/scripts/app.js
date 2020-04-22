@@ -47,11 +47,23 @@ var Counter = function (_React$Component) {
     }, {
         key: 'handleReset',
         value: function handleReset() {
-            this.setState(function (prevState) {
+            this.setState(function () {
                 return {
                     count: 0
                 };
             });
+
+            // New style & sync --recommended
+            // this.setState(
+            //     (prevState)=>{
+            //         return{
+            //             count: prevState.count+1
+            //         }
+            //     }
+            // );
+
+            // Old style & async because of the virtual DOM --not recommended
+            //this.setState({count:0});
         }
     }, {
         key: 'render',
