@@ -1,6 +1,6 @@
 class Counter extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.handleAddOne = this.handleAddOne.bind(this);
         this.handleMinusOne = this.handleMinusOne.bind(this);
@@ -11,31 +11,48 @@ class Counter extends React.Component {
         };
     }
 
-    handleAddOne(){
+    componentDidMount() {
+        try {
+            const count = parseInt(localStorage.getItem('count'));
+            if (count) {
+                this.setState(() => ({ count }));
+            }
+        } catch (e) {
+            console.log('error', e);
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.count !== this.state.count) {
+            localStorage.setItem('count', this.state.count)
+        }
+    }
+
+    handleAddOne() {
         this.setState(
-            (prevState)=>{
-                return{
-                    count:prevState.count+1
+            (prevState) => {
+                return {
+                    count: prevState.count + 1
                 }
             }
         )
     }
 
-    handleMinusOne(){
+    handleMinusOne() {
         this.setState(
-            (prevState)=>{
-                return{
-                    count:prevState.count-1
+            (prevState) => {
+                return {
+                    count: prevState.count - 1
                 }
             }
         )
     }
 
-    handleReset(){
+    handleReset() {
         this.setState(
-            ()=>{
-                return{
-                    count:0
+            () => {
+                return {
+                    count: 0
                 }
             }
         );
@@ -57,17 +74,17 @@ class Counter extends React.Component {
         return (
             <div>
                 <h1>Count : {this.state.count}</h1>
-                <button onClick = {this.handleAddOne}>+1</button>
-                <button onClick = {this.handleMinusOne}>-1</button>
-                <button onClick = {this.handleReset}>reset</button>
+                <button onClick={this.handleAddOne}>+1</button>
+                <button onClick={this.handleMinusOne}>-1</button>
+                <button onClick={this.handleReset}>reset</button>
             </div>
         );
     }
 
-   
+
 }
 Counter.defaultProps = {
-    count : 0
+    count: 0
 }
 
-ReactDOM.render(<Counter count = {5}/>, document.getElementById('app'));
+ReactDOM.render(<Counter count={5} />, document.getElementById('app'));
