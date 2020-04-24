@@ -27,7 +27,24 @@ var IndecisionApp = function (_React$Component) {
         return _this;
     }
 
+    // https://reactjs.org/docs/state-and-lifecycle.html#adding-lifecycle-methods-to-a-class
+
     _createClass(IndecisionApp, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            console.log('DidMount');
+        }
+    }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate(prevProps, prevState) {
+            console.log('DidUpdate');
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            console.log('WillUnmount');
+        }
+    }, {
         key: 'handleDeleteOptions',
         value: function handleDeleteOptions() {
             this.setState(function () {
