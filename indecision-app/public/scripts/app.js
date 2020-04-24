@@ -31,7 +31,7 @@ var Counter = function (_React$Component) {
         value: function componentDidMount() {
             try {
                 var count = parseInt(localStorage.getItem('count'));
-                if (count) {
+                if (!NaN(count)) {
                     this.setState(function () {
                         return { count: count };
                     });
