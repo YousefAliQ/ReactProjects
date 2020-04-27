@@ -6,7 +6,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 console.log(validator.isEmail('test'));
 
-const template = React.createElement('p', {}, 'Hello!');
+const template = <p>Hello, I am JSX </p>;
 
 ReactDOM.render(template, document.getElementById('app'));
 
