@@ -1,12 +1,27 @@
-import subtract, {square, add} from  './utils';
-import isSenior, {isAdult, canFast} from './person';
+/* ******* import npm modules ************** */
 
-console.log('app running!');
+// install -> import -> use
+import validator from 'validator';
+import React from 'react';
+import ReactDOM from 'react-dom';
+console.log(validator.isEmail('test'));
 
-console.log(square(4));
-console.log(add(4,4));
-console.log(subtract(4,4)); // subtract as a default, used for big/main things. (the name does not matter)
+const template = React.createElement('p', {}, 'Hello!');
 
-console.log(isAdult(17));
-console.log(canFast(20));
-console.log(isSenior(80));
+ReactDOM.render(template, document.getElementById('app'));
+
+
+
+/* ******* export/import ************** */
+// import subtract, {square, add} from  yarn'./utils';
+// import isSenior, {isAdult, canFast} from './person';
+
+// console.log('app running!');
+
+// console.log(square(4));
+// console.log(add(4,4));
+// console.log(subtract(4,4)); // subtract as a default, used for big/main things. (the name does not matter)
+
+// console.log(isAdult(17));
+// console.log(canFast(20));
+// console.log(isSenior(80));
