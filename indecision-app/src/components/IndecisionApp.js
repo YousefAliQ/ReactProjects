@@ -6,16 +6,8 @@ import Header from './Header';
 
 export default class IndecisionApp extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
-        this.handlePick = this.handlePick.bind(this);
-        this.handleAddOption = this.handleAddOption.bind(this);
-        this.handleDeleteOption = this.handleDeleteOption.bind(this);
-
-        this.state = {
-            options: props.options
-        }
+    state = {
+        options: []
     }
 
     // https://reactjs.org/docs/state-and-lifecycle.html#adding-lifecycle-methods-to-a-class
@@ -46,17 +38,17 @@ export default class IndecisionApp extends React.Component {
         console.log('WillUnmount');
     }
 
-    handleDeleteOptions() {
+    handleDeleteOptions = () => {
         this.setState(() => ({ options: [] }));
     }
 
-    handleDeleteOption(optionToRemove) {
+    handleDeleteOption = (optionToRemove) => {
         this.setState((prevState) => ({
             options: prevState.options.filter((option) => option !== optionToRemove)
         }));
     }
 
-    handlePick() {
+    handlePick = () => {
         const randomNumber = this.getOptionsRandomNumber();
         const option = this.state.options[randomNumber];
         alert(option);
@@ -66,7 +58,7 @@ export default class IndecisionApp extends React.Component {
         return Math.floor(Math.random() * this.state.options.length);
     }
 
-    handleAddOption(option) {
+    handleAddOption = (option) => {
 
         if (!option) {
             return 'Enter valid value to add item';
