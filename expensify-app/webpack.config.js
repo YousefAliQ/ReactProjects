@@ -4,7 +4,7 @@
 const path = require('path');
 module.exports = {
     //entry: './src/app.js',
-    entry: './src/playground/destructuring.js',
+    entry: './src/playground/array-destructuring.js',
     output: {
         path: path.join(__dirname, 'public'), // absolute path
         filename: 'boundle.js'
