@@ -19,7 +19,7 @@ const setCount = (count) => ({
     count
 });
 
-const store = createStore((state = { count: 0 }, action) => {
+const coountReducer = (state = { count: 0 }, action) => {
 
     const incrementBy = typeof action.incrementBy === 'number' ? action.incrementBy : 1;
     const decrementBy = typeof action.decrementBy === 'number' ? action.decrementBy : 1;
@@ -40,7 +40,9 @@ const store = createStore((state = { count: 0 }, action) => {
         default:
             return state;
     }
-});
+};
+
+const store = createStore(coountReducer);
 
 const unsubscribe = store.subscribe(() => {
     console.log(store.getState());
