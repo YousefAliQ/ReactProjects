@@ -3,7 +3,8 @@
 
 const path = require('path');
 module.exports = {
-    entry: './src/app.js',
+    //entry: './src/app.js',
+    entry: './src/playground/redux-expensify.js',
     output: {
         path: path.join(__dirname, 'public'), // absolute path
         filename: 'boundle.js'
