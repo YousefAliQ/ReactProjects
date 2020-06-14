@@ -2,10 +2,11 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const App = ({ hi }: { hi: string }) => {
   return (
     <div className="App">
       <header className="App-header">
+        <h1> { hi } </h1>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Write <code>src/App.tsx</code> and save to reload.
