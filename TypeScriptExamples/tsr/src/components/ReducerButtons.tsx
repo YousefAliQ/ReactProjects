@@ -2,13 +2,24 @@ import React, { useReducer } from 'react'
 
 export const ReducerButtons = () => {
 
-    const initialState = { rValue: true }
-    function reducer(state: any, action: any) {
+    const initialState = { rValue: true };
+
+    type State = {
+        rValue: boolean;
+    }
+    // type Action = { type: "one" | "two"; }
+    type Action =
+        | { type: "one" }
+        | { type: "two" };
+
+    function reducer(state: State, action: Action) {
         switch (action.type) {
             case 'one':
                 return { rValue: true }
             case 'two':
                 return { rValue: false }
+            default:
+                return state;
         }
     }
 
