@@ -3,6 +3,7 @@ import { Head } from './components/Head';
 import logo from './logo.svg';
 import './App.css';
 import { Button } from './components/Button';
+import { Input } from './components/Input';
 
 const App = () => {
   return (
@@ -12,8 +13,9 @@ const App = () => {
         e.preventDefault();
         console.log(e);
       }} >
-        Hello World
+        Hello FC
       </Button>
+      <Input />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
