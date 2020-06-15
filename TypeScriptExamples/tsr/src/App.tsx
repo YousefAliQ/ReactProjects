@@ -1,12 +1,16 @@
 import React from 'react';
-import {Head} from './components/Head';
+import { Head } from './components/Head';
 import logo from './logo.svg';
 import './App.css';
+import { Button } from './components/Button';
 
 const App = () => {
   return (
     <div className="App">
-      <Head title ="Hello" />
+      <Head title="Hello" />
+      <Button onClick={(value) => {
+        console.log(value);
+      }} />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
