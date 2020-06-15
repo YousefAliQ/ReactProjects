@@ -1,12 +1,13 @@
 import React from 'react';
+import {Head} from './components/Head';
 import logo from './logo.svg';
 import './App.css';
 
-const App = ({ hi }: { hi: string }) => {
+const App = () => {
   return (
     <div className="App">
+      <Head title ="Hello" isActive={true}/>
       <header className="App-header">
-        <h1> { hi } </h1>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Write <code>src/App.tsx</code> and save to reload.
