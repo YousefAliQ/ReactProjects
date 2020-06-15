@@ -4,6 +4,8 @@ import logo from './logo.svg';
 import './App.css';
 import { Button } from './components/Button';
 import { Input } from './components/Input';
+import { ReducerButtons } from './components/ReducerButtons';
+
 
 const App = () => {
   return (
@@ -15,6 +17,7 @@ const App = () => {
       }} >
         Hello FC
       </Button>
+      <ReducerButtons />
       <Input />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
