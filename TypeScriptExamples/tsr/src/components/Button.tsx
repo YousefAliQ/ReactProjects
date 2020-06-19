@@ -1,14 +1,12 @@
 import React from 'react'
 
 type Props = {
-    // onClick(): string; 
-    // onClick(): void;
-    //onClick(text : string): void; 
-    onClick: (text: string) => void;
+    onClick: (e: React.MouseEvent<HTMLButtonElement>) => void; 
 }
-
-export const Button = ({ onClick }: Props) => {
+// Use React.FC to type components
+// That use children props
+export const Button: React.FC<Props> = ({ onClick, children}) => {
     return (
-        <button onClick = {() => onClick("hi")}> Click </button>
+        <button onClick={onClick}> {children} </button>
     )
 }
