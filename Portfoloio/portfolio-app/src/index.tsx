@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import 'bulma/css/bulma.css';
+import { GlobalStyle } from './Styles/GlobalStyle';
+
 
 ReactDOM.render(
   <React.StrictMode>
+    <GlobalStyle />
     <App />
   </React.StrictMode>,
   document.getElementById('root')
