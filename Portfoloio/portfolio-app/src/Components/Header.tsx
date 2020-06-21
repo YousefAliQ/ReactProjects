@@ -1,43 +1,12 @@
-import React from 'react'
-import styled from 'styled-components';
-
+import React from 'react';
+import Title from './Title'
 
 export const Header = () => {
 
-
-    // const Button = styled.button`
-    // background: transparent;
-    // border-radius: 3px;
-    // border: 2px solid palevioletred;
-    // color: palevioletred;
-    // margin: 0 1em;
-    // padding: 0.25em 1em;
-    // `;
-
-    // background: ${props => props.selected ? 'red' : 'palevioletred'};
-        
-    const Button = styled.div<{ primary?: boolean }>`
-        background: transparent;
-        border-radius: 3px;
-        border: 2px solid palevioletred;
-        color: black;
-        margin: 0 1em;
-        padding: 0.25em 1em;
-        background: ${props => props.primary ? 'gray' : 'white'};
-        
-    `;
-
-
     return (
         <div>
-            <Button>I am a button</Button>
-            <br/>
-            <Button primary>I am a primary button</Button>
-            <div className="content">
-                <p className="title is-3">Yousef Quran</p>
-                <p className="subtitle is-5">GIS Developer</p>
-            </div>
-
+            <Title/>
+            
             <div className="tabs is-fullwidth">
                 <ul>
                     <li>
